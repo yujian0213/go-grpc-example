@@ -1,13 +1,12 @@
 syntax="proto3";
-option go_package = "./;proto";
 package proto;
+option go_package = "./;proto";
 
 service StreamService{
     rpc List(StreamRequest) returns (stream StreamResponse) {};
     rpc Record(stream StreamRequest) returns (StreamResponse) {};
     rpc Route(stream  StreamRequest) returns (stream StreamResponse) {};
 }
-
 
 message StreamPoint{
     string name = 1;
